@@ -1,7 +1,7 @@
 
 .navbar {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   background-color: #6b057a;
   padding: 16px;
@@ -11,6 +11,19 @@
   z-index: 100;
 }
 
+.logoHeader {
+  font-size: 20px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.logoHeader img {
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+}
 
 .hamburgerBtn {
   background: transparent;
@@ -43,7 +56,7 @@
   position: fixed;
   top: 0;
   right: -100%; 
-  width: 75vw;
+  width: 250px;
   height: 100vh;
   background-color: #6b057a;
   display: flex;
@@ -109,10 +122,10 @@
 }
 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .navbar {
     justify-content: center;
-    gap: 16px;
+    gap: 48px;
   }
 
   .hamburgerBtn,

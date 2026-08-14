@@ -36,6 +36,7 @@ const Header = () => {
 
   return (
     <nav className={styles.navbar}>
+      <div className={styles.logoHeader}>Veterinaria Huellas<img src="/logo-huella.png" alt="Logo de la App veterinaria" /></div>
       <button 
         className={styles.hamburgerBtn} 
         onClick={toggleMenu} 

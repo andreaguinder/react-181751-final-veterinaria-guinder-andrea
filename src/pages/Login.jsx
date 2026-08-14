@@ -80,7 +80,7 @@ const Login = () => {
 
   return (
     <div className={styles.containerGeneral}>
-      <h1>Iniciar Sesión / Acceso</h1>
+      <h1>Iniciar Sesión</h1>
 
       <form onSubmit={handleSubmit} className={styles.formTurno}>
         {errorMsg && <p style={{ color: 'red', marginBottom: '10px' }}>{errorMsg}</p>}

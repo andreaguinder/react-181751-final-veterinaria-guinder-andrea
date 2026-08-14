@@ -1,0 +1,104 @@
+.cardTurnoAdmin {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eaeaea;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+
+  .infoTurno {
+    p {
+      margin: 0.25rem 0;
+      font-size: 0.95rem;
+      color: #4a4a4a;
+
+      strong {
+        color: #222222;
+      }
+    }
+
+    .mensajeTurno {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      background-color: #f9f9f9;
+      padding: 0.5rem;
+      border-radius: 6px;
+    }
+  }
+
+  /* Opacidad para completados */
+  &.turnoCompletado {
+    opacity: 0.55;
+    filter: grayscale(20%);
+    background-color: #f8f9fa;
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+}
+
+/* Switch / Toggle personalizado */
+.toggleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #f0f0f0;
+
+  .estadoLabel {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #666666;
+  }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 22px;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked + .slider {
+      background-color: #6b057a;
+    }
+
+    &:checked + .slider:before {
+      transform: translateX(22px);
+    }
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.3s;
+    border-radius: 34px;
+
+    &:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: 0.3s;
+      border-radius: 50%;
+    }
+  }
+}

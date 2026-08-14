@@ -1,0 +1,142 @@
+.buttonVolver {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    color: #6b057a;
+    font-size: 20px;
+    margin: 16px;
+    gap: 4px;
+
+    svg {
+            stroke: #6b057a;
+    }
+}
+
+.containerServiceDetail {
+    display: flex;
+    flex-direction: column;
+        width: 340px;
+    margin: 16px auto;
+    border: 2px solid #6b057a;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+
+.cardDetail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+        align-items: center;
+    gap: 16px;
+        text-align: center;
+
+    img {
+        width: 70%;
+        height: auto;
+    }
+
+    .containerInfo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        flex-direction: column;
+
+    h2 {
+        font-size: 20px;
+        color: #6b057a;
+        font-weight: 600;
+    }
+
+
+    .descripcion {
+        color: #000000;
+        font-size: 14px;
+    }
+
+    .precio {
+        font-size: 18px;
+        color: #c32a9c;
+        font-weight: 600;
+    }
+}
+
+    .buttonPedirTurno {
+        background-color: #6b057a;
+        color: #FFFFFF;
+        font-size: 16px;
+        padding: 8px 64px;
+        border-radius: 32px;
+        text-decoration: none;
+        border: none;
+
+          &:hover {
+    background-color: #c32a9c;
+  }
+    }
+}
+}
+
+@media screen and (min-width: 768px) {
+
+    .buttonVolver {
+
+    font-size: 24px;
+    margin: 20px 64px;
+
+    svg {
+            stroke: #6b057a;
+            width: 30px;
+            height: 30px;
+
+    }
+}
+
+.containerServiceDetail {
+flex-direction: row;
+    width: 90%;
+    margin: 20px auto;
+    border: 3px solid #6b057a;
+    border-radius: 16px;
+    padding: 32px;
+        gap: 32px;
+    text-align: left;
+
+    .cardDetail {
+flex-direction: row;
+
+
+
+    img {
+        width: 100%;
+        min-width: 350px;
+    }
+
+    .containerInfo {
+        gap: 16px;
+        align-items: flex-start;
+        text-align: left;
+
+    h2 {
+        font-size: 32px;
+    }
+
+
+    .descripcion {
+        color: #000000;
+        font-size: 18px;
+    }
+
+    .precio {
+        font-size: 24px;
+        color: #c32a9c;
+    }
+}
+}
+}
+}

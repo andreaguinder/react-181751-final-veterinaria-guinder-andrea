@@ -1,0 +1,86 @@
+[
+  {
+    "id": "combo-vacunacion-cachorros",
+    "nombre": "Plan Completo Vacunación Cachorros (1ª a 4ª Dosis)",
+    "precio": 45000,
+    "imagen": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=800",
+    "descripcion": "Esquema de inmunización inicial indispensable para cachorros. Incluye la aplicación correlativa de la 1ª, 2ª, 3ª y 4ª dosis (Vacuna Quintuple/Sextuple y Antirrábica), acompañadas de revisiones clínicas previas a cada aplicación para asegurar que el cachorro esté apto, desparasitado y con su sistema inmunológico listo para responder de forma óptima."
+  },
+  {
+    "id": "vacuna-quintuple-individual",
+    "nombre": "Vacuna Quintuple / Sextuple (Dosis Individual)",
+    "precio": 13500,
+    "imagen": "https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&q=80&w=800",
+    "descripcion": "Aplicación de dosis única de refuerzo anual o dosis individual para cachorros. Protege contra parvovirus, moquillo, hepatitis infecciosa, parainfluenza y leptospirosis. Incluye un examen físico rápido previo para constatar temperatura, ganglios y estado general de salud del paciente."
+  },
+  {
+    "id": "consulta-clinica-general",
+    "nombre": "Consulta Clínica General",
+    "precio": 12000,
+    "imagen": "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&q=80&w=800",
+    "descripcion": "Evaluación veterinaria integral para perros y gatos. Incluye revisión de signos vitales, auscultación cardíaca y pulmonar, palpación abdominal, chequeo de oídos, ojos, cavidad oral y piel. Ideal para diagnósticos preventivos, controles de rutina o ante cualquier síntoma o molestia del paciente."
+  },
+  {
+    "id": "ozonoterapia-geriatricos",
+    "nombre": "Ozonoterapia para Pacientes Gerontológicos",
+    "precio": 18000,
+    "imagen": "https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&q=80&w=800",
+    "descripcion": "Tratamiento médico complementario ideal para perros y gatos viejitos con artrosis, dolor articular, disfunción renal o enfermedades crónicas. El ozono actúa como un potente antiinflamatorio y antioxidante natural que mejora el transporte de oxígeno en sangre y revitaliza la calidad de vida sin efectos secundarios."
+  },
+  {
+    "id": "ecografia-abdominal-integral",
+    "nombre": "Ecografía Abdominal Completa",
+    "precio": 22000,
+    "imagen": "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=800",
+    "descripcion": "Estudio de diagnóstico por imágenes no invasivo y sin dolor. Permite visualizar en tiempo real la estructura interna de órganos como hígado, riñones, vejiga, bazo, estómago e intestinos. Vital para detectar inflamaciones, cálculos, masas o realizar seguimiento de gestaciones."
+  },
+  {
+    "id": "analisis-sangre-completo",
+    "nombre": "Perfil Sanguíneo Completo (Hemograma + Bioquímica)",
+    "precio": 19500,
+    "imagen": "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=800",
+    "descripcion": "Análisis de laboratorio esencial que evalúa células sanguíneas (glóbulos rojos, blancos y plaquetas) y la función de órganos clave como riñones e hígado (urea, creatinina, GPT, GOT, glucemia). Fundamental para chequeos preventivos anuales o prequirúrgicos."
+  },
+  {
+    "id": "castracion-esterilizacion",
+    "nombre": "Cirugía de Castración / Esterilización",
+    "precio": 38000,
+    "imagen": "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=800",
+    "descripcion": "Procedimiento quirúrgico programado bajo anestesia general y monitoreo constante. Ayuda a prevenir patologías reproductivas futuras (tumores de mama, infecciones uterinas, problemas prostáticos) y reduce conductas territoriales. Incluye medicación de alta inmediata y controles postoperatorios."
+  },
+  {
+    "id": "limpieza-dental-ultrasonido",
+    "nombre": "Profilaxis Dental con Ultrasonido (Tartrectomía)",
+    "precio": 32000,
+    "imagen": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=800",
+    "descripcion": "Tratamiento odontológico profundo para eliminar la placa bacteriana y el sarro acumulado en encías y dientes. Previene la enfermedad periodontal, pérdida de piezas dentales y el mal aliento (halitosis). Se realiza bajo anestesia suave para total confort del paciente."
+  },
+  {
+    "id": "consulta-dermatologia-alergias",
+    "nombre": "Consulta Especializada en Dermatología y Alergias",
+    "precio": 16000,
+    "imagen": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&q=80&w=800",
+    "descripcion": "Atención enfocada en problemas de piel, picazón constante, alergias alimentarias o ambientales, otitis crónicas y hongos. Incluye raspado cutáneo simple o citología rápida para determinar el origen exacto del cuadro y diagramar un tratamiento efectivo."
+  },
+  {
+    "id": "microchip-identificacion",
+    "nombre": "Implantación de Microchip de Identificación",
+    "precio": 15000,
+    "imagen": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&q=80&w=800",
+    "descripcion": "Aplicación subcutánea indolora de un dispositivo diminuto con un código alfanumérico único e irrepetible. Cumple con normativas internacionales de viaje y permite identificar formalmente a la mascota en bases de datos en caso de extravío o robo."
+  },
+  {
+    "id": "peluqueria-canina-felina",
+    "nombre": "Servicio de Peluquería y Baño Terapéutico",
+    "precio": 14000,
+    "imagen": "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=800",
+    "descripcion": "Sesión estética y de higiene adaptada al tipo de manto y piel. Incluye baño con champú dermatológico acorde a las necesidades del paciente, corte higiénico o de raza, deslanado, limpieza de oídos y corte de uñas, todo bajo un protocolo de bajo estrés."
+  },
+  {
+    "id": "radiografia-digital",
+    "nombre": "Estudio Radiológico Digital (2 Placas)",
+    "precio": 17500,
+    "imagen": "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800",
+    "descripcion": "Obtención de imágenes de alta resolución para evaluar el sistema osteoarticular (fracturas, luxaciones, displasia de cadera) o tórax y abdomen (cuerpos extraños, problemas respiratorios). La tecnología digital permite una entrega inmediata del informe técnico."
+  }
+]

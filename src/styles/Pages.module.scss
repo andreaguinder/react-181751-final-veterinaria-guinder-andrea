@@ -1,0 +1,525 @@
+.containerGeneral {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto 50px;
+
+    h1 {
+ font-size: 24px;
+ color: #6b057a;
+ font-weight: 600;
+ margin: 30px auto;
+    }
+
+    .containerServiciosInicio {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: auto;
+        gap: 16px;
+    }
+
+    .containerNosotros {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 50px;
+
+        .containerRedes {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 32px;
+
+            div {
+                font-size: 18px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+
+                svg {
+               fill: #6b057a;
+                }
+
+            }
+        }
+    }
+}
+
+.formTurno {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 95%;
+    gap: 16px;
+    min-width: 340px;
+    padding: 16px;
+border: 2px solid #6b057a;
+border-radius: 8px;
+margin-bottom: 50px;
+
+    input, textarea {
+        min-height: 32px;
+        border-radius: 8px;
+        width: 100%;
+        padding: 4px 12px;
+        border: 2px solid #c32a9c;
+    }
+
+    textarea {
+        min-height: 100px;
+    }
+
+
+        .btnForm {
+        background-color: #6b057a;
+        color: #FFFFFF;
+        font-size: 16px;
+        padding: 8px 64px;
+        border-radius: 32px;
+        width: 100%;
+        text-decoration: none;
+        border: none;
+
+          &:hover {
+    background-color: #c32a9c;
+  }
+    }
+}
+
+.modalContainer {
+  background-color: #fff;
+  padding: 2.5rem;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: auto;
+
+  h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #6b057a;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #333;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #6b057a;
+  }
+
+  input {
+    padding: 0.75rem;
+    border: 1px solid #6b057a;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+
+    &:focus {
+      border-color: #c32a9c; 
+    }
+  }
+}
+
+.submitButton {
+    background-color: #6b057a;
+        color: #FFFFFF;
+        font-size: 16px;
+        padding: 8px 64px;
+        border-radius: 32px;
+        text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border: none;
+
+  &:hover {
+    background-color: #c32a9c;
+  }
+}
+
+.checkout {
+
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 32px;
+
+    h2 {
+        color: #6b057a;
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+}
+
+  .searchInput {
+    width: 330px;
+    height: 40px;
+    padding: 4px 12px;
+    border-radius: 8px;
+    border: 2px solid #c32a9c;
+    margin-bottom: 30px;
+    outline: none;
+  transition: all 0.2s ease-in-out;
+
+    &:focus {
+    border-color: #6b057a;
+}
+  }
+
+  .containerGeneralTurnos {
+        display: grid;
+        grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+@media screen and (min-width: 768px) {
+
+      .containerGeneralTurnos {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+      .searchInput {
+    width: 600px;
+    height: 40px;
+    padding: 4px 12px;
+    border-radius: 8px;
+    border: 2px solid #c32a9c;
+    margin-bottom: 30px;
+}
+
+    .containerGeneral {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+
+    h1 {
+font-size: 32px;
+margin: 0px auto 30px;
+    }
+
+    .containerServiciosInicio {        
+        flex-direction: row;
+        gap: 32px;
+        flex-wrap: wrap;
+        max-width: 1200px;
+    }
+
+        .containerNosotros {
+        gap: 32px;
+        max-width: 1000px;
+
+        .containerRedes {
+            gap: 64px;
+
+            div {
+                font-size: 24px;
+                gap: 16px;
+
+            }
+        }
+    }
+}
+
+
+.formTurno {
+    min-width: 600px;
+
+}
+}
+
+// HOME VETE
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+
+  .tituloPrincipal {
+    order: 1;
+    font-size: 24px;
+  color: #6b057a;
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .infoPrincipal {
+    order: 2;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .primeraFoto {
+    order: 3;
+    width: 100%;
+    margin-bottom: 1rem;
+
+    img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+
+  .primeraInfo {
+    order: 4;
+    margin-bottom: 2rem;
+
+    h2 {
+      font-size: 20px;
+      color: #c32a9c;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #000000;
+    }
+  }
+
+  .segundaFoto {
+    order: 5;
+    width: 100%;
+    margin-bottom: 1rem;
+
+    img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+
+  .ultimaInfo {
+    order: 6;
+    margin-bottom: 1.5rem;
+
+    h2 {
+      font-size: 20px;
+      color: #c32a9c;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #000000;
+    }
+  }
+
+
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    padding: 3rem 2rem;
+
+    .tituloPrincipal {
+      grid-column: 1 / -1;
+      font-size: 32px;
+    }
+
+    .infoPrincipal {
+      grid-column: 1 / -1;
+      font-size: 20px;
+      max-width: 800px;
+      margin: 0 auto 2.5rem auto;
+    }
+
+    // Fila 1 en Desktop: Info a la izquierda, Imagen a la derecha
+    .primeraInfo {
+      grid-column: 1;
+      grid-row: 3;
+      margin-bottom: 0;
+
+      h2 { font-size: 24px; }
+      p { font-size: 16px; }
+    }
+
+    .primeraFoto {
+      grid-column: 2;
+      grid-row: 3;
+      margin-bottom: 0;
+
+      img { height: 300px; }
+    }
+
+    // Fila 2 en Desktop: Imagen a la izquierda, Info a la derecha
+    .segundaFoto {
+      grid-column: 1;
+      grid-row: 4;
+      margin-bottom: 0;
+
+      img { height: 300px; }
+    }
+
+    .ultimaInfo {
+      grid-column: 2;
+      grid-row: 4;
+      margin-bottom: 0;
+
+      h2 { font-size: 24px; }
+      p { font-size: 16px; }
+    }
+  }
+}
+
+.modalOverlayTurnos {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContentTurnos {
+  background-color: #ffffff;
+  padding: 1.8rem;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeInTurnos 0.2s ease-in-out;
+
+  .modalHeaderTurnos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    .warningIconTurnos {
+      color: #e63946;
+    }
+
+    h3 {
+      margin: 0;
+      color: #2b2d42;
+      font-size: 1.25rem;
+    }
+  }
+
+  p {
+    color: #6c757d;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.modalActionsTurnos {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+    font-size: 16px;
+
+    &.btnCancelTurnos {
+      background-color: #f1f3f5;
+      color: #495057;
+
+      &:hover {
+        background-color: #e9ecef;
+      }
+    }
+
+    &.btnConfirmTurnos {
+      background-color: #c32a9c;
+      color: #ffffff;
+    }
+  }
+}
+
+@keyframes fadeInTurnos {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

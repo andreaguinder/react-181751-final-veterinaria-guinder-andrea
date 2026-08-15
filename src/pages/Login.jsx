@@ -90,7 +90,8 @@ const Login = () => {
 
   return (
     <div className={styles.containerGeneral}>
-      <h1>Iniciar Sesión</h1>
+      <h1>Iniciar Sesión como usuario</h1>
+      <h2 className={styles.subtituloLogin}>Simplemente escribí tu mail y una contraseña de 6 caracteres</h2>
 
       <form onSubmit={handleSubmit} className={styles.formTurno} noValidate>
         {errorMsg && <p style={{ color: 'red', marginBottom: '10px' }}>{errorMsg}</p>}
@@ -127,6 +128,13 @@ const Login = () => {
           Ingresar
         </button>
       </form>
+
+<div className={styles.containerIngresaAdmin}>
+        <h2>Si querés probar la experiencia completa podés ingresar luego como admin</h2>
+        <p>Usuario: admin@gmail.com</p>
+        <p>Contraseña: admin1234</p>
+</div>
+
     </div>
   );
 };

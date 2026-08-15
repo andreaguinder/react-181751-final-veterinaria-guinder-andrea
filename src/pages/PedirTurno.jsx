@@ -1,9 +1,9 @@
-
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { collection, addDoc } from 'firebase/firestore';
 import { onAuthStateChanged } from 'firebase/auth';
 import { db, auth } from '../config/firebaseConfig';
+import { validarTurno } from '../utils/validations';
 import styles from '../styles/Pages.module.scss';
 
 const PedirTurno = () => {
@@ -12,6 +12,7 @@ const PedirTurno = () => {
 
   const [user, setUser] = useState(null);
   const [loadingAuth, setLoadingAuth] = useState(true);
+  const [errores, setErrores] = useState({}); // 👈 Estado para guardar los errores de validación
 
   const [formData, setFormData] = useState({
     nombre: '',
@@ -20,7 +21,6 @@ const PedirTurno = () => {
     horario: '',
     mensaje: '',
   });
-
 
   useEffect(() => {
     const servicioSeleccionado = location.state?.servicio;
@@ -37,11 +37,11 @@ const PedirTurno = () => {
       const nuevoTurno = {
         userId: usuario.uid,
         userEmail: usuario.email,
-        nombre: data.nombre,
-        mascota: data.mascota,
+        nombre: data.nombre.trim(),
+        mascota: data.mascota.trim(),
         fecha: data.fecha,
         horario: data.horario,
-        mensaje: data.mensaje,
+        mensaje: data.mensaje.trim(),
         isCompleted: false,
         createdAt: new Date(),
       };
@@ -54,17 +54,21 @@ const PedirTurno = () => {
     }
   };
 
-
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       setUser(currentUser);
       setLoadingAuth(false);
 
-
       const pendingData = sessionStorage.getItem('pendingTurno');
       if (currentUser && pendingData) {
         const parsedData = JSON.parse(pendingData);
-        await guardarEnFirestore(currentUser, parsedData);
+        const validacion = validarTurno(parsedData);
+        
+        if (validacion.valido) {
+          await guardarEnFirestore(currentUser, parsedData);
+        } else {
+          sessionStorage.removeItem('pendingTurno');
+        }
       }
     });
 
@@ -77,21 +81,31 @@ const PedirTurno = () => {
       ...prev,
       [name]: value,
     }));
+
+    // Limpiamos el error del campo a medida que el usuario escribe
+    if (errores[name]) {
+      setErrores((prev) => ({ ...prev, [name]: null }));
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-
     if (loadingAuth) return;
 
+    // 🛡️ VALIDACIÓN PROPIA (Se ejecuta tu módulo JS)
+    const validacion = validarTurno(formData);
+
+    if (!validacion.valido) {
+      setErrores(validacion.errores); // Guardamos los errores en el estado
+      return; // Detenemos la ejecución: NO va a Firebase ni al login
+    }
 
     if (!user) {
       sessionStorage.setItem('pendingTurno', JSON.stringify(formData));
       navigate('/login');
       return;
     }
-
 
     await guardarEnFirestore(user, formData);
   };
@@ -100,7 +114,8 @@ const PedirTurno = () => {
     <div className={styles.containerGeneral}>
       <h1>Pedir turno</h1>
 
-      <form onSubmit={handleSubmit} className={styles.formTurno}>
+      {/* Le agregamos novalidate para que el navegador no interfiera */}
+      <form onSubmit={handleSubmit} className={styles.formTurno} noValidate>
         <label>
           <span>Nombre del dueño:</span>
           <input
@@ -108,8 +123,8 @@ const PedirTurno = () => {
             name="nombre"
             value={formData.nombre}
             onChange={handleChange}
-            required
           />
+          {errores.nombre && <p className={styles.errorText}>{errores.nombre}</p>}
         </label>
 
         <label>
@@ -119,8 +134,8 @@ const PedirTurno = () => {
             name="mascota"
             value={formData.mascota}
             onChange={handleChange}
-            required
           />
+          {errores.mascota && <p className={styles.errorText}>{errores.mascota}</p>}
         </label>
 
         <label>
@@ -130,8 +145,8 @@ const PedirTurno = () => {
             name="fecha"
             value={formData.fecha}
             onChange={handleChange}
-            required
           />
+          {errores.fecha && <p className={styles.errorText}>{errores.fecha}</p>}
         </label>
 
         <label>
@@ -141,8 +156,8 @@ const PedirTurno = () => {
             name="horario"
             value={formData.horario}
             onChange={handleChange}
-            required
           />
+          {errores.horario && <p className={styles.errorText}>{errores.horario}</p>}
         </label>
 
         <label>
@@ -151,8 +166,8 @@ const PedirTurno = () => {
             name="mensaje"
             value={formData.mensaje}
             onChange={handleChange}
-            required
           />
+          {errores.mensaje && <p className={styles.errorText}>{errores.mensaje}</p>}
         </label>
 
         <button type="submit" className={styles.btnForm} disabled={loadingAuth}>

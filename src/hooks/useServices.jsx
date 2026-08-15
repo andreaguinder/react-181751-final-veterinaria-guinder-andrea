@@ -14,7 +14,7 @@ export const useServicios = (id = null) => {
       setLoading(true);
       setError(null);
 
-      console.log("🔍 Buscando servicio con id:", id);
+      console.log("Buscando servicio con id:", id);
 
       try {
         if (id) {
@@ -24,10 +24,10 @@ export const useServicios = (id = null) => {
           if (!isMounted) return;
 
           if (docSnap.exists()) {
-            console.log("✅ Servicio encontrado:", docSnap.data());
+            console.log("Servicio encontrado:", docSnap.data());
             setData({ ...docSnap.data(), id: docSnap.id });
           } else {
-            console.warn("⚠️ Documento no encontrado en Firestore.");
+            console.warn("Documento no encontrado en Firestore.");
             setError('El servicio no existe.');
           }
         } else {
@@ -40,11 +40,11 @@ export const useServicios = (id = null) => {
             id: d.id,
           }));
 
-          console.log("✅ Lista de servicios cargada:", serviciosList.length);
+          console.log("Lista de servicios cargada:", serviciosList.length);
           setData(serviciosList);
         }
       } catch (err) {
-        console.error('❌ Error al conectar con Firestore:', err);
+        console.error('Error al conectar con Firestore:', err);
         if (isMounted) setError('Error al obtener los datos.');
       } finally {
         if (isMounted) setLoading(false); 

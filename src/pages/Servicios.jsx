@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'; 
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { useServicios } from '../hooks/useServices';
 import ServiceCard from '../components/ServiceCard/ServiceCard';
 import styles from '../styles/Pages.module.scss';
@@ -9,20 +9,28 @@ const Servicios = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const searchInputRef = useRef(null);
 
-useEffect(() => {
-    if (servicios) {
-      searchInputRef.current?.focus();
-    }
-  }, [servicios]);
-
-  if (loading) return <Loader />;
-  if (error) return <p>{error}</p>;
-
-  const serviciosFiltrados = servicios ? servicios.filter((serv) =>
-    serv.nombre?.toLowerCase().includes(searchTerm.toLowerCase())
-  ) : [];
+    useEffect(() => {
+        if (servicios) {
+            searchInputRef.current?.focus();
+        }
+    }, [servicios]);
 
 
+    const serviciosFiltrados = useMemo(() => {
+        if (!servicios) return [];
+
+        const term = searchTerm.toLowerCase().trim();
+        if (!term) return servicios;
+
+        return servicios.filter((serv) => {
+            const nombreCoincide = serv.nombre?.toLowerCase().includes(term);
+
+            return nombreCoincide;
+        });
+    }, [servicios, searchTerm]);
+
+    if (loading) return <Loader />;
+    if (error) return <p>{error}</p>;
 
     return (
         <div className={styles.containerGeneral}>
@@ -31,7 +39,7 @@ useEffect(() => {
                 <input
                     ref={searchInputRef}
                     type="text"
-                    placeholder="Buscar servicio..."
+                    placeholder="Buscar servicio por nombre..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className={styles.searchInput}
@@ -50,7 +58,7 @@ useEffect(() => {
                         />
                     ))
                 ) : (
-                    <p>No se encontraron servicios con ese nombre.</p>
+                    <p>No se encontraron servicios que coincidan con la búsqueda.</p>
                 )}
             </div>
         </div>

@@ -2,11 +2,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     gap: 16px;
     background-color: #6b057a;
     padding: 16px;
     width: 100%;
-    height: 64px;
+    height: auto;
 
     p,a {
         color: #FFFFFF;
@@ -15,5 +16,9 @@
     a {
         text-decoration: none;
         font-weight: 600;
+    }
+
+    .disclaimer {
+        font-size: 12px;
     }
 }

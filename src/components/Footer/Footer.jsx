@@ -6,7 +6,10 @@ const Footer = () => {
         <>
 
             <div className={styles.containerFooter}>
-                <p>Desarrollado por
+                <p className={styles.disclaimer}>
+  Este sitio web es un proyecto académico realizado únicamente con fines educativos. La veterinaria, los servicios, turnos y datos presentados son completamente ficticios.
+</p>
+                <p>Diseño y desarrollo por
                     <a
                     href="https://andreaguinder.com/"
                     target="_blank"

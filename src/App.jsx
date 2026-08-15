@@ -10,6 +10,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import AdminRoute from './components/AdminRoute/AdminRoute';
 import MisTurnos from './pages/MisTurnos';
 import Admin from './pages/Admin';
+import PaginaError from './pages/PaginaError';
 
 import ItemServiceDetail from './pages/ItemServiceDetail';
 import './index.scss';
@@ -44,6 +45,8 @@ function App() {
               </AdminRoute>
             }
           />
+
+          <Route path="*" element={<PaginaError />} />
 
         </Route>
       </Routes>

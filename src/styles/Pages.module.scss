@@ -405,7 +405,7 @@
             margin: 0 auto 2.5rem auto;
         }
 
-        // Fila 1 en Desktop: Info a la izquierda, Imagen a la derecha
+
         .primeraInfo {
             grid-column: 1;
             grid-row: 3;
@@ -430,7 +430,6 @@
             }
         }
 
-        // Fila 2 en Desktop: Imagen a la izquierda, Info a la derecha
         .segundaFoto {
             grid-column: 1;
             grid-row: 4;

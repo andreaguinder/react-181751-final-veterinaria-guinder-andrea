@@ -48,7 +48,7 @@ const MisTurnos = () => {
         prev.map((t) => (t.id === id ? { ...t, ...updatedData } : t))
       );
     } catch (error) {
-      console.error('❌ Error al actualizar turno:', error);
+      console.error('Error al actualizar turno:', error);
     }
   };
 
@@ -67,7 +67,7 @@ const MisTurnos = () => {
       await deleteDoc(doc(db, 'turnos', turnoToDelete));
       setTurnos((prev) => prev.filter((t) => t.id !== turnoToDelete));
     } catch (error) {
-      console.error('❌ Error al eliminar turno:', error);
+      console.error('Error al eliminar turno:', error);
     } finally {
       setTurnoToDelete(null);
     }

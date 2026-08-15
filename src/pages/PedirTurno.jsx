@@ -12,7 +12,7 @@ const PedirTurno = () => {
 
   const [user, setUser] = useState(null);
   const [loadingAuth, setLoadingAuth] = useState(true);
-  const [errores, setErrores] = useState({}); // 👈 Estado para guardar los errores de validación
+  const [errores, setErrores] = useState({});
 
   const [formData, setFormData] = useState({
     nombre: '',
@@ -82,7 +82,7 @@ const PedirTurno = () => {
       [name]: value,
     }));
 
-    // Limpiamos el error del campo a medida que el usuario escribe
+
     if (errores[name]) {
       setErrores((prev) => ({ ...prev, [name]: null }));
     }
@@ -93,12 +93,11 @@ const PedirTurno = () => {
 
     if (loadingAuth) return;
 
-    // 🛡️ VALIDACIÓN PROPIA (Se ejecuta tu módulo JS)
     const validacion = validarTurno(formData);
 
     if (!validacion.valido) {
-      setErrores(validacion.errores); // Guardamos los errores en el estado
-      return; // Detenemos la ejecución: NO va a Firebase ni al login
+      setErrores(validacion.errores);
+      return; 
     }
 
     if (!user) {
@@ -114,7 +113,7 @@ const PedirTurno = () => {
     <div className={styles.containerGeneral}>
       <h1>Pedir turno</h1>
 
-      {/* Le agregamos novalidate para que el navegador no interfiera */}
+
       <form onSubmit={handleSubmit} className={styles.formTurno} noValidate>
         <label>
           <span>Nombre del dueño:</span>

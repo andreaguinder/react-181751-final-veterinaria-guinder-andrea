@@ -1,5 +1,5 @@
-// src/pages/PaginaError.jsx
-import { Link } from 'react-router-dom'; // 👈 Asegurate de ajustar la ruta a tu logo
+
+import { Link } from 'react-router-dom';
 import styles from '../styles/Pages.module.scss';
 
 const PaginaError = () => {

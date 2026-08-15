@@ -6,14 +6,14 @@ import {
 } from 'firebase/auth';
 import { collection, addDoc } from 'firebase/firestore';
 import { db, auth } from '../config/firebaseConfig';
-import { validarLogin } from '../utils/validations'; // 👈 Importamos la validación
+import { validarLogin } from '../utils/validations'; 
 import styles from '../styles/Pages.module.scss';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
-  const [errores, setErrores] = useState({}); // 👈 Guardamos los errores por campo
+  const [errores, setErrores] = useState({});
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -23,12 +23,11 @@ const Login = () => {
     setErrorMsg('');
     setErrores({});
 
-    // 🛡️ Ejecutamos la validación del módulo independiente
     const validacion = validarLogin(email, password);
 
     if (!validacion.valido) {
       setErrores(validacion.errores);
-      return; // Frenamos si la validación falla
+      return; 
     }
 
     let loggedUser = null;
